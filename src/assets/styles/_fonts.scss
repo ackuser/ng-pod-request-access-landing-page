@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300,900&display=swap');
+@import '_colors';
+
+
+@font-face {
+    font-family: 'Chivo-Light';
+    src: url('../fonts/Chivo-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Chivo-Bold';
+    src: url('../fonts/Chivo-Bold.ttf') format('truetype');
+}
+
+@mixin font($fontFamily, $fontSize, $color, $lineHeight) {
+    font-family: $fontFamily;
+    font-size: $fontSize;
+    color: $color;
+    line-height: $lineHeight;
+}
+
+.font {
+
+    &-title {
+        @include font(Chivo-Light, 52px, $white, 62px);
+    }
+
+    &-body {
+        @include font(Chivo-Light, 18px, $purple-soft, 28px);
+    }
+
+    &-btn {
+        @include font(Chivo-Bold, 14px, $white, 28px);
+    }
+
+}
