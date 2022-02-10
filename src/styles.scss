@@ -27,3 +27,27 @@ body {
 app-root {
     min-height: 100vh;
 }
+
+
+.btn {
+    @extend .font-btn;
+    display: flex;
+    height: 46px;
+    border-radius: 28px;
+    padding: 9px auto;
+    align-items: center;
+    border: none;
+
+    &--1 {
+        background: $gray-dark;
+        color: hsl(0, 0%, 100%, .5);
+        justify-content: flex-start;
+        padding-left: 32px;
+    }
+
+    &--2 {
+        background: $green;
+        color: $gray-verydark;
+        justify-content: center;
+    }
+}

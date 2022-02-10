@@ -2,6 +2,8 @@
 
 :host {
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     position: relative;
     background: $gray-verydark;
 }

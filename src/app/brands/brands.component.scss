@@ -1,5 +1,29 @@
 :host {
     display: flex;
-    justify-content: space-around;
-    height: 17px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.brand {
+
+    &--spotify {
+        width: 56px;
+        height: 17px;
+    }
+
+    &--apple-podcast {
+        width: 46px;
+        height: 17px;
+    }
+
+    &--google-podcasts {
+        width: 73px;
+        height: 11px;
+    }
+
+    &--pocket-casts {
+        width: 77px;
+        height: 15px;
+    }
+
 }
