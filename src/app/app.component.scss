@@ -1,19 +1,82 @@
 @import '_colors';
+@import '_fonts';
+@import '_layout';
+@import '_grid';
 
 :host {
+    display: grid;
+    grid-template-columns: repeat(12, $column-width);
+    grid-gap: $gutter-width;
+    background: $gray-verydark;
+    // @debug 5px * 3;
+}
+
+.container {
+    grid-column: 2 / span 10;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     position: relative;
-    background: $gray-verydark;
+    height: 511px;
+    padding-top: 3 * $grid-cell;
+
+    &__logo {
+        width: 96px;
+        height: 40px;
+        align-self: center;
+        margin-bottom: 4 * $grid-cell;
+    }
+
+    &__title {
+        @extend .font-title;
+        color: $green;
+        margin-bottom: $grid-cell;
+    }
+
+    &__highlight {
+        color: $white;
+    }
+
+    &__description {
+        @extend .font-body;
+        color: $purple-soft;
+        margin-bottom: 2 * $grid-cell;
+    }
+
+    &__brands {
+        margin-bottom: 2 * $grid-cell;
+    }
+
+    &__btn {
+        @extend .font-btn;
+        display: flex;
+        min-height: 46px;
+        border-radius: 28px;
+        padding: 9px auto;
+        align-items: center;
+        border: none;
+
+        &--1 {
+            background: $gray-dark;
+            color: hsl(0, 0%, 100%, .5);
+            justify-content: flex-start;
+            padding-left: 32px;
+            margin-bottom: .8 * $grid-cell;
+        }
+
+        &--2 {
+            background: $green;
+            color: $gray-verydark;
+            justify-content: center;
+        }
+    }
+
 }
 
 .background {
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
     opacity: 0.1;
     background-repeat: no-repeat;
     background-size: cover;

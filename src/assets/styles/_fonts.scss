@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Chivo:wght@300,900&display=swap');
-@import '_colors';
-
-
 @font-face {
     font-family: 'Chivo-Light';
     src: url('../fonts/Chivo-Light.ttf') format('truetype');
@@ -12,25 +8,29 @@
     src: url('../fonts/Chivo-Bold.ttf') format('truetype');
 }
 
-@mixin font($fontFamily, $fontSize, $color, $lineHeight) {
+@mixin font($fontFamily, $fontSize, $lineHeight) {
     font-family: $fontFamily;
     font-size: $fontSize;
-    color: $color;
     line-height: $lineHeight;
 }
 
 .font {
 
     &-title {
-        @include font(Chivo-Light, 52px, $white, 62px);
+        @include font(Chivo-Light, 24px, 38px);
+        // @include font(Chivo-Light, 52px, 62px);
+        text-transform: uppercase;
+        text-align: center;
     }
 
     &-body {
-        @include font(Chivo-Light, 18px, $purple-soft, 28px);
+        @include font(Chivo-Light, 15px, 25px);
+        // @include font(Chivo-Light, 18px, 28px);
+        text-align: center
     }
 
     &-btn {
-        @include font(Chivo-Bold, 14px, $white, 28px);
+        @include font(Chivo-Bold, 14px, 28px);
     }
 
 }
