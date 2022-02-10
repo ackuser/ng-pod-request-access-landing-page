@@ -5,32 +5,72 @@
 
 :host {
     display: grid;
-    grid-template-columns: repeat(12, $column-width);
-    grid-gap: $gutter-width;
+    grid-template-columns: repeat(12, $column-width-mb);
+    grid-gap: $gutter-width-mb;
     background: $gray-verydark;
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        grid-template-columns: repeat(6, 1fr);
+        padding-left: $gutter-width-tablet;
+        padding-right: $gutter-width-tablet;
+    }
+
     // @debug 5px * 3;
 }
 
 .container {
     grid-column: 2 / span 10;
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        grid-column: 1 / span 3;
+    }
+
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     position: relative;
     height: 511px;
     padding-top: 3 * $grid-cell;
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        width: 640px;
+        height: 717px;
+        padding-top: 2 * $grid-cell;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+
+        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            width: 635px;
+            height: 509px;
+            background: $gray-verydark;
+        }
+    }
+
 
     &__logo {
         width: 96px;
         height: 40px;
         align-self: center;
         margin-bottom: 4 * $grid-cell;
+
+        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            width: 135px;
+            height: 56px;
+            align-self: flex-start;
+            margin-bottom: 13 * $grid-cell;
+        }
     }
 
     &__title {
         @extend .font-title;
         color: $green;
         margin-bottom: $grid-cell;
+
+        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            margin-bottom: 2 * $grid-cell;
+        }
     }
 
     &__highlight {
@@ -41,6 +81,9 @@
         @extend .font-body;
         color: $purple-soft;
         margin-bottom: 2 * $grid-cell;
+        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            width: 70%;
+        }
     }
 
     &__brands {
@@ -50,6 +93,7 @@
     &__btn {
         @extend .font-btn;
         display: flex;
+        flex-grow: 1;
         min-height: 46px;
         border-radius: 28px;
         padding: 9px auto;
@@ -62,28 +106,36 @@
             justify-content: flex-start;
             padding-left: 32px;
             margin-bottom: .8 * $grid-cell;
+            @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+                width: 427px;
+            }
         }
 
         &--2 {
             background: $green;
             color: $gray-verydark;
             justify-content: center;
+            @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+                width: 162px;
+            }
         }
     }
-
 }
 
 .background {
     position: absolute;
     left: 0;
     top: 0;
+    height: 100vh;
+    width: 100vw;
     opacity: 0.1;
     background-repeat: no-repeat;
     background-size: cover;
     background-image: url("../assets/images/mobile/image-host.jpg");
 
-    @media screen and (min-device-width: 768px) {
-        // background-image: url("../../assets/images/tablet/image-footer.jpg");
+    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        opacity: 1;
+        background-image: url("../assets/images/tablet/image-host.jpg");
     }
 
     @media screen and (min-device-width: 1024px) {

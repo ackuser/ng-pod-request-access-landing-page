@@ -21,12 +21,22 @@
         // @include font(Chivo-Light, 52px, 62px);
         text-transform: uppercase;
         text-align: center;
+
+        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            @include font(Chivo-Light, 48px, 56px);
+            text-align: start;
+        }
     }
 
     &-body {
         @include font(Chivo-Light, 15px, 25px);
         // @include font(Chivo-Light, 18px, 28px);
-        text-align: center
+        text-align: center;
+
+        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+            @include font(Chivo-Light, 18px, 28px);
+            text-align: start;
+        }
     }
 
     &-btn {
