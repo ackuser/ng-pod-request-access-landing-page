@@ -1,0 +1,50 @@
+@import '_colors';
+@import '_grid';
+@import '_fonts';
+
+:host {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        flex-direction: row;
+        align-items: baseline;
+        align-content: center;
+    }
+
+    .btn {
+        @extend .font-btn;
+        display: flex;
+        flex-grow: 1;
+        min-height: 46px;
+        border-radius: 28px;
+        padding: 9px auto;
+        align-items: center;
+        border: none;
+
+        &--1 {
+            background: $gray-dark;
+            color: hsl(0, 0%, 100%, .5);
+            justify-content: flex-start;
+            padding-left: 32px;
+            margin-bottom: .8 * $grid-cell;
+
+            @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+                width: 427px;
+                min-height: 56px;
+            }
+        }
+
+        &--2 {
+            background: $green;
+            color: $gray-verydark;
+            justify-content: center;
+
+            @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+                width: 162px;
+                height: 46px;
+                position: absolute;
+            }
+        }
+    }
+}

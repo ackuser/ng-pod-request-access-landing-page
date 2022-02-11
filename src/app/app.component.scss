@@ -81,6 +81,7 @@
         @extend .font-body;
         color: $purple-soft;
         margin-bottom: 2 * $grid-cell;
+
         @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
             width: 70%;
         }
@@ -88,37 +89,6 @@
 
     &__brands {
         margin-bottom: 2 * $grid-cell;
-    }
-
-    &__btn {
-        @extend .font-btn;
-        display: flex;
-        flex-grow: 1;
-        min-height: 46px;
-        border-radius: 28px;
-        padding: 9px auto;
-        align-items: center;
-        border: none;
-
-        &--1 {
-            background: $gray-dark;
-            color: hsl(0, 0%, 100%, .5);
-            justify-content: flex-start;
-            padding-left: 32px;
-            margin-bottom: .8 * $grid-cell;
-            @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-                width: 427px;
-            }
-        }
-
-        &--2 {
-            background: $green;
-            color: $gray-verydark;
-            justify-content: center;
-            @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-                width: 162px;
-            }
-        }
     }
 }
 
