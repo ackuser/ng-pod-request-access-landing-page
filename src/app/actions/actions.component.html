@@ -1,2 +1,20 @@
-<input class="btn btn--1" value="Email Address"/>
-<button class="btn btn--2">Request Access</button>
+<form [formGroup]="signUpFormGroup" (ngSubmit)="submit(emailFormControl)">
+  <input
+    class="btn btn--1"
+    [formControl]="emailFormControl"
+    type="email"
+    placeholder="Email address"
+    #inputElement
+  />
+
+  <button type="submit" class="btn btn--2">Request Access</button>
+</form>
+<p
+*ngIf="
+  emailFormControl.invalid &&
+  (emailFormControl.touched || emailFormControl.dirty)
+"
+class="error"
+>
+Oops! Please check your email
+</p>

@@ -2,7 +2,7 @@
 @import '_grid';
 @import '_fonts';
 
-:host {
+form {
     display: flex;
     flex-direction: column;
 
@@ -50,9 +50,21 @@
                 right: 30%;
             }
 
+            @media screen and (min-device-width: 1024px) {
+                right: 31.5%;
+            }
+
             &:hover {
                 background: #B3FFE2;
+                cursor: pointer;
             }
         }
     }
+}
+
+.error {
+    @include font(Chivo-Bold, 12px, 14px);
+    position: absolute;
+    margin: 8px 32px;
+    color: #FB3E3E;
 }

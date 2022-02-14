@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-actions',
   templateUrl: './actions.component.html',
   styleUrls: ['./actions.component.scss']
 })
-export class ActionsComponent implements OnInit {
+export class ActionsComponent {
 
-  constructor() { }
+  emailFormControl = new FormControl('', {
+    validators: [Validators.required, Validators.email],
+    // updateOn: 'submit'
+  });
+  signUpFormGroup = new FormGroup({
+    email: this.emailFormControl
+  });
 
-  ngOnInit(): void {
+  submit(emailFormControl: FormControl) {
+    console.log(emailFormControl);
   }
 
 }
