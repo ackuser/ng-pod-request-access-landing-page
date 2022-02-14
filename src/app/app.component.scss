@@ -5,26 +5,31 @@
 
 :host {
     display: grid;
-    grid-template-columns: repeat(12, $column-width-mb);
+    grid-template-columns: repeat(4, $column-width-mb);
     grid-gap: $gutter-width-mb;
     background: $gray-verydark;
+    padding-left: calc($gutter-width-mb / 2);
+    padding-right: calc($gutter-width-mb / 2);
 
     @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-        grid-template-columns: repeat(6, 1fr);
-        padding-left: $gutter-width-tablet;
-        padding-right: $gutter-width-tablet;
+        grid-template-columns: repeat(8, $column-width-tablet);
+        grid-gap: $gutter-width-tablet;
+        padding-left: calc($gutter-width-tablet / 2);
+        padding-right: calc($gutter-width-tablet / 2);
+    }
+
+    @media screen and (min-device-width: 1024px) {
+        grid-template-columns: repeat(12, $column-width-desktop);
+        grid-gap: $gutter-width-tablet;
+        padding-left: calc($column-width-desktop / 2);
+        padding-right: calc($gutter-width-desktop / 2);
     }
 
     // @debug 5px * 3;
 }
 
 .container {
-    grid-column: 2 / span 10;
-
-    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
-        grid-column: 1 / span 3;
-    }
-
+    grid-column: 1 / span 4;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -37,13 +42,27 @@
         padding-top: 2 * $grid-cell;
     }
 
+    @media screen and (min-device-width: 1024px) {
+        grid-column: 2 / span 9;
+        width: 730px;
+        height: 668px;
+        padding-top: 5 * $grid-cell;
+    }
+
     .wrapper {
         display: flex;
         flex-direction: column;
 
         @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
             width: 635px;
-            height: 509px;
+            min-height: 509px;
+            background: $gray-verydark;
+            margin-left: .5 * $grid-cell;
+        }
+
+        @media screen and (min-device-width: 1024px) {
+            width: 723px;
+            min-height: 509px;
             background: $gray-verydark;
         }
     }
@@ -55,11 +74,15 @@
         align-self: center;
         margin-bottom: 4 * $grid-cell;
 
-        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        @media screen and (min-device-width: 768px){
             width: 135px;
             height: 56px;
             align-self: flex-start;
-            margin-bottom: 13 * $grid-cell;
+            margin-bottom: 8.5 * $grid-cell;
+        }
+
+        @media screen and (min-device-width: 1024px){
+            margin-bottom: 5 * $grid-cell;
         }
     }
 
@@ -68,7 +91,8 @@
         color: $green;
         margin-bottom: $grid-cell;
 
-        @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        @media screen and (min-device-width: 768px){
+            margin-top: 4 * $grid-cell;
             margin-bottom: 2 * $grid-cell;
         }
     }
@@ -85,16 +109,30 @@
         @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
             width: 70%;
         }
+
+        @media screen and (min-device-width: 1024px){
+            width: 62%;
+        }
     }
 
     &__brands {
+        margin-bottom: 2 * $grid-cell;
+
+        @media screen and (min-device-width: 768px) {
+            margin-bottom: 3 * $grid-cell;
+            order: 1;
+            max-width: 536px;
+        }
+    }
+
+    &__actions {
         margin-bottom: 2 * $grid-cell;
     }
 }
 
 .background {
     position: absolute;
-    left: 0;
+    right: 0;
     top: 0;
     height: 100vh;
     width: 100vw;
@@ -106,9 +144,33 @@
     @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
         opacity: 1;
         background-image: url("../assets/images/tablet/image-host.jpg");
+        width: 491px;
+        height: 767px;
     }
 
     @media screen and (min-device-width: 1024px) {
-        // background-image: url("../../assets/images/desktop/image-footer.jpg");
+        opacity: 1;
+        background-image: url("../assets/images/desktop/image-host.jpg");
+        width: 888px;
+        height: 640px;
+        margin-top: 6 * $grid-cell;
+    }
+}
+
+
+.pattern {
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+
+    @media screen and (min-device-width: 768px) and (max-device-width: 1023px) {
+        visibility: visible;
+        margin-left: -1%;
+    }
+
+    @media screen and (min-device-width: 1024px) {
+        visibility: visible;
+        margin-bottom: 4 * $grid-cell;
+        right: 0;
     }
 }
